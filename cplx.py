@@ -74,23 +74,21 @@ def phase(a):
     return math.atan2(a[1], a[0])
 
 
-def cartesian_to_polar(a):
+def convert_complex(number, to_representation):
     """
-    Takes one complex number in cartesian form and returns its polar form
-    :param a: Complex number as tuple: a + bi -> (a, b)
-    :return: Polar form of the complex number
-    """
-    p: float = modulus(a)
-    theta = math.atan2(a[1], a[0])
-    return p, theta
+    Convert a complex number between cartesian and polar representations.
 
-
-def polar_to_cartesian(cplx):
+    :param number: Complex number as tuple: a + bi -> (a, b) or (r, theta).
+    :param to_representation: String indicating the desired representation: 'cartesian' or 'polar'.
+    :return: Converted complex number.
     """
-    Takes one complex number in polar form and returns its cartesian form
-    :param cplx: Complex number as tuple: a + bi -> (a, b)
-    :return: Cartesian form of the complex number
-    """
-    a = cplx[0] * math.cos(cplx[1])
-    b = cplx[0] * math.sin(cplx[1])
-    return a, b
+    if to_representation == 'polar':
+        p = modulus(number)
+        theta = math.atan2(number[1], number[0])
+        return p, theta
+    elif to_representation == 'cartesian':
+        a = number[0] * math.cos(number[1])
+        b = number[0] * math.sin(number[1])
+        return a, b
+    else:
+        raise ValueError("Invalid representation. Please choose 'cartesian' or 'polar'.")
