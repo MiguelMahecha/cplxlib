@@ -17,6 +17,15 @@ In order to test the project
 
 ```shell
 git clone <link>
-cd cplx
+cd cplxlib
 python cplx_text.py
 ```
+
+If you wish to add the functions to your project, this should work
+
+```shell
+cd <root of your project>
+git clone <link>
+rm -rf cplx/.git # so that you can use your own repo
+```
+You should now have a module called ```cplxlib``` that you can use on your project
