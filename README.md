@@ -16,7 +16,7 @@ the following operations on complex numbers:
 In order to test the project
 
 ```shell
-git clone <link>
+git clone https://github.com/MiguelMahecha/cplxlib.git
 cd cplxlib
 python cplx_text.py
 ```
@@ -25,7 +25,7 @@ If you wish to add the functions to your project, this should work
 
 ```shell
 cd <root of your project>
-git clone <link>
+git clone https://github.com/MiguelMahecha/cplxlib.git
 rm -rf cplx/.git # so that you can use your own repo
 ```
 You should now have a module called ```cplxlib``` that you can use on your project
