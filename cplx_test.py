@@ -34,13 +34,16 @@ class TestComplexOperations(unittest.TestCase):
         self.assertAlmostEqual(phase((-1, 0)), math.pi, places=7)
         self.assertAlmostEqual(phase((0, -1)), -math.pi / 2, places=7)
 
-    def test_cartesian_to_polar(self):
-        self.assertAlmostEqual(cartesian_to_polar((1, 1)), (1.4142135623730951, 0.7853981633974483), places=7)
-        self.assertAlmostEqual(cartesian_to_polar((-1, -1)), (1.4142135623730951, -2.356194490192345), places=7)
+    def test_convert_complex_cartesian_to_polar(self):
+        self.assertAlmostEqual(convert_complex((1, 1), 'polar'), (1.4142135623730951, 0.7853981633974483), places=7)
+        self.assertAlmostEqual(convert_complex((-1, -1), 'polar'), (1.4142135623730951, -2.356194490192345),
+                               places=7)
 
-    def test_polar_to_cartesian(self):
-        self.assertAlmostEqual(polar_to_cartesian((1, 1)), (0.5403023058681398, 0.8414709848078965), places=7)
-        self.assertAlmostEqual(polar_to_cartesian((1, -1)), (0.5403023058681398, -0.8414709848078965), places=7)
+    def test_convert_complex_polar_to_cartesian(self):
+        self.assertAlmostEqual(convert_complex((1, 1), 'cartesian'), (0.5403023058681398, 0.8414709848078965),
+                               places=7)
+        self.assertAlmostEqual(convert_complex((1, -1), 'cartesian'), (0.5403023058681398, -0.8414709848078965),
+                               places=7)
 
 
 if __name__ == '__main__':
