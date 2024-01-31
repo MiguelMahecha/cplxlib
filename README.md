@@ -29,3 +29,7 @@ git clone https://github.com/MiguelMahecha/cplxlib.git
 rm -rf cplx/.git # so that you can use your own repo
 ```
 You should now have a module called ```cplxlib``` that you can use on your project
+
+$$
+\int_{0}^{1} x^2 \, dx
+$$
